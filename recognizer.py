@@ -90,7 +90,7 @@ def show_signa(sound1, fs1, sound2, fs2):
     mfc2 = librosa.feature.mfcc(sound2, fs2, n_mfcc=20)
     dist, dists = compare(mfc1.T, mfc2.T)
     print('dtw distance {}'.format(round(dist)))
-    if dist <= 30:
+    if dist <= 36:
         print('I recognized your word!!!')
         part = (dists.index(dist) + 1) / len(dists) -0.1
         s2 = sound2[int(round(len(sound2) * part)):int(round(len(sound2) * part)) + len(sound1)]
